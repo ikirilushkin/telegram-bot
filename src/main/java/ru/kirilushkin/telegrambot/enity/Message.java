@@ -1,18 +1,22 @@
-package ru.kirilushkin.telegrambot.domain;
+package ru.kirilushkin.telegrambot.enity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+
+@MappedSuperclass
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Message {
 
-    @JsonProperty("message_id")
+    @Id
     private int id;
 
-    @JsonProperty("from")
-    private User user;
+//    @ManyToOne
+//    @JoinColumn(name = "user_id")
+//    private User user;
 }
